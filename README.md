@@ -1,8 +1,7 @@
 # RandomNameGenerator
  An Random Japanese Name Generator written in c++ as an Console Application
 
-***Note:*** the Dakuten character **"chi"** is displayed as **"xji**" to not get confused with the d
-Dakuten character **"shi"**, when writing in Kana/Kanji
+***Note:*** the Dakuten character **"chi"** is displayed as **"xji**" to not get confused with the Dakuten character **"shi"**, when writing in Kana/Kanji
 
 ## Planned Features:
 * conversion to an C# .Net Framework application including an GUI
