@@ -48,10 +48,8 @@ int main()
 	srand((long)time(NULL)); //Seed the randum number generator...
 	do
 	{
-		printf("Choose a length for the First Name (2-5)\n");
-		cin >> lengthOfFirstName;
-		printf("Choose a length for the Last Name (2-5)\n");
-		cin >> lengthOfLastName;
+		printf("Choose a length for the First Name (2-5 0 for Random): "); cin >> lengthOfFirstName;
+		printf("Choose a length for the Last Name (2-5 0 for Random): "); cin >> lengthOfLastName;
 		NameGenFirstName(Name1);
 		NameGenLastName(Name2);
 		printf("\nFirst Name: %s", Name1);
@@ -73,10 +71,48 @@ char get_Char(void)
 
 void NameGenFirstName(char* Name)
 {
-
-	int iRandom = rand() % 6;
-
-	if (lengthOfFirstName <= 2)
+	int iRandom = rand() % 100 +1;
+	if (lengthOfFirstName == 0) {
+		if (iRandom <= 25)
+		{
+			Name[0] = 0;
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			Name[0] = toupper(Name[0]);
+			return;
+		}
+		else if (iRandom <= 50)
+		{
+			Name[0] = 0;
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]); 
+			strcat(Name, syllables[rand() % 105 + 1]);
+			Name[0] = toupper(Name[0]);
+			return;
+		}
+		else if (iRandom <= 75)
+		{
+			Name[0] = 0; 
+			strcat(Name, syllables[rand() % 105 + 1]); 
+			strcat(Name, syllables[rand() % 105 + 1]); 
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			Name[0] = toupper(Name[0]); 
+			return;
+		}
+		else if (iRandom <= 100)
+		{
+			Name[0] = 0; 
+			strcat(Name, syllables[rand() % 105 + 1]); 
+			strcat(Name, syllables[rand() % 105 + 1]); 
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			Name[0] = toupper(Name[0]); 
+			return;
+		}
+	}
+	else if (lengthOfFirstName <= 2)
 	{
 		Name[0] = 0; //Initialize the string to "" (zero length string)
 		strcat(Name, syllables[rand() % 105 + 1]); //add the first syllable
@@ -86,76 +122,114 @@ void NameGenFirstName(char* Name)
 	}
 	else if (lengthOfFirstName == 3)
 	{
-		Name[0] = 0; //Initialize the string to "" (zero length string)
-		strcat(Name, syllables[rand() % 105 + 1]); //add the first syllable
-		strcat(Name, syllables[rand() % 105 + 1]); //add the second syllable
+		Name[0] = 0; 
+		strcat(Name, syllables[rand() % 105 + 1]); 
 		strcat(Name, syllables[rand() % 105 + 1]);
-		Name[0] = toupper(Name[0]); //Make the first letter capital...
+		strcat(Name, syllables[rand() % 105 + 1]);
+		Name[0] = toupper(Name[0]); 
 		return;
 	}
 	else if (lengthOfFirstName == 4)
 	{
-		Name[0] = 0; //Initialize the string to "" (zero length string)
-		strcat(Name, syllables[rand() % 105 + 1]); //add the first syllable
-		strcat(Name, syllables[rand() % 105 + 1]); //add the second syllable
+		Name[0] = 0; 
+		strcat(Name, syllables[rand() % 105 + 1]); 
+		strcat(Name, syllables[rand() % 105 + 1]); 
 		strcat(Name, syllables[rand() % 105 + 1]);
 		strcat(Name, syllables[rand() % 105 + 1]);
-		Name[0] = toupper(Name[0]); //Make the first letter capital...
+		Name[0] = toupper(Name[0]); 
 		return;
 	}
 	else if (lengthOfFirstName >= 5)
 	{
-		Name[0] = 0; //Initialize the string to "" (zero length string)
-		strcat(Name, syllables[rand() % 105 + 1]); //add the first syllable
-		strcat(Name, syllables[rand() % 105 + 1]); //add the second syllable
+		Name[0] = 0; 
+		strcat(Name, syllables[rand() % 105 + 1]); 
+		strcat(Name, syllables[rand() % 105 + 1]); 
 		strcat(Name, syllables[rand() % 105 + 1]);
 		strcat(Name, syllables[rand() % 105 + 1]);
 		strcat(Name, syllables[rand() % 105 + 1]);
-		Name[0] = toupper(Name[0]); //Make the first letter capital...
+		Name[0] = toupper(Name[0]); 
 		return;
 	}
 }
 void NameGenLastName(char* Name)
 {
-
 	int iRandom = rand() % 6;
-
-	if (lengthOfLastName <= 2)
+	if (NameGenLastName == 0) {
+		if (iRandom <= 25)
+		{
+			Name[0] = 0;
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			Name[0] = toupper(Name[0]);
+			return;
+		}
+		else if (iRandom <= 50)
+		{
+			Name[0] = 0;
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			Name[0] = toupper(Name[0]);
+			return;
+		}
+		else if (iRandom <= 75)
+		{
+			Name[0] = 0;
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			Name[0] = toupper(Name[0]);
+			return;
+		}
+		else if (iRandom <= 100)
+		{
+			Name[0] = 0;
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			strcat(Name, syllables[rand() % 105 + 1]);
+			Name[0] = toupper(Name[0]);
+			return;
+		}
+	}
+	else if (lengthOfLastName <= 2)
 	{
-		Name[0] = 0; //Initialize the string to "" (zero length string)
-		strcat(Name, syllables[rand() % 105 + 1]); //add the first syllable
-		strcat(Name, syllables[rand() % 105 + 1]); //add the second syllable
-		Name[0] = toupper(Name[0]); //Make the first letter capital...
+		Name[0] = 0; 
+		strcat(Name, syllables[rand() % 105 + 1]);
+		strcat(Name, syllables[rand() % 105 + 1]); 
+		Name[0] = toupper(Name[0]); 
 		return;
 	}
 	else if (lengthOfLastName == 3)
 	{
-		Name[0] = 0; //Initialize the string to "" (zero length string)
-		strcat(Name, syllables[rand() % 105 + 1]); //add the first syllable
-		strcat(Name, syllables[rand() % 105 + 1]); //add the second syllable
+		Name[0] = 0; 
+		strcat(Name, syllables[rand() % 105 + 1]); 
+		strcat(Name, syllables[rand() % 105 + 1]); 
 		strcat(Name, syllables[rand() % 105 + 1]);
-		Name[0] = toupper(Name[0]); //Make the first letter capital...
+		Name[0] = toupper(Name[0]); 
 		return;
 	}
 	else if (lengthOfLastName == 4)
 	{
-		Name[0] = 0; //Initialize the string to "" (zero length string)
-		strcat(Name, syllables[rand() % 105 + 1]); //add the first syllable
-		strcat(Name, syllables[rand() % 105 + 1]); //add the second syllable
+		Name[0] = 0; 
+		strcat(Name, syllables[rand() % 105 + 1]); 
+		strcat(Name, syllables[rand() % 105 + 1]); 
 		strcat(Name, syllables[rand() % 105 + 1]);
 		strcat(Name, syllables[rand() % 105 + 1]);
-		Name[0] = toupper(Name[0]); //Make the first letter capital...
+		Name[0] = toupper(Name[0]); 
 		return;
 	}
 	else if (lengthOfLastName >= 5)
 	{
-		Name[0] = 0; //Initialize the string to "" (zero length string)
-		strcat(Name, syllables[rand() % 105 +1]); //add the first syllable
-		strcat(Name, syllables[rand() % 105 + 1]); //add the second syllable
+		Name[0] = 0; 
+		strcat(Name, syllables[rand() % 105 +1]); 
+		strcat(Name, syllables[rand() % 105 + 1]); 
 		strcat(Name, syllables[rand() % 105 + 1]);
 		strcat(Name, syllables[rand() % 105 + 1]);
 		strcat(Name, syllables[rand() % 105 + 1]);
-		Name[0] = toupper(Name[0]); //Make the first letter capital...
+		Name[0] = toupper(Name[0]); 
 		return;
 	}
 }
