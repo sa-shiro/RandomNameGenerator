@@ -153,7 +153,7 @@ void NameGenFirstName(char* Name)
 }
 void NameGenLastName(char* Name)
 {
-	int iRandom = rand() % 6;
+	int iRandom = rand() % 100 + 1;
 	if (NameGenLastName == 0) {
 		if (iRandom <= 25)
 		{
